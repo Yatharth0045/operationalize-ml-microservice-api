@@ -8,7 +8,8 @@ jobs:
   build:
     docker:
 # Use the same Docker base as the project
-    - image: python:3.7.3-stretch
+      - image: python:3.7.3-stretch
+    
     working_directory: ~/repo
     steps:
     - checkout
@@ -21,6 +22,7 @@ jobs:
           - v1-dependencies-
 
     - run:
+        shell: /bin/bash
         name: install dependencies
         command: |
           python3 -m venv venv
