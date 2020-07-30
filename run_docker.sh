@@ -12,4 +12,4 @@ docker images | grep ${TAG}
 
 # Step 3: 
 # Run flask app
-docker run ${TAG}
+docker run -p 8000:80 ${TAG}

@@ -31,6 +31,7 @@ git clone https://github.com/Yatharth0045/operationalize-ml-microservice-api.git
  sudo apt-get update && sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
  sudo add-apt-repository "deb [arch=arm64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+ sudo docker --version
  ```
  
  For any other Linux distribution or OS, refer to [docker docs](https://docs.docker.com/engine/install/)
@@ -39,6 +40,7 @@ git clone https://github.com/Yatharth0045/operationalize-ml-microservice-api.git
  
  ```
  sudo wget -O /bin/hadolint https://github.com/hadolint/hadolint/releases/download/v1.16.3/hadolint-Linux-x86_64 && sudo chmod +x /bin/hadolint
+ hadolint --version
  ```
  
  For any other distribution or OS, refer to [hadolint README](https://github.com/hadolint/hadolint#install)
@@ -46,5 +48,10 @@ git clone https://github.com/Yatharth0045/operationalize-ml-microservice-api.git
 3. Install Minikube (Kubernetes)
  
  Refer to official [Kubernetes documentation](https://kubernetes.io/docs/tasks/tools/install-minikube/) for install minikube and kubectl.
+ After install, verify the version using `minikube version`
 
+#### 4. Verify Dockerfile lint
 
+ ```
+ hadolint Dockerfile
+ ```
