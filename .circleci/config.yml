@@ -1,10 +1,9 @@
 version: 2.1
 
-orbs:
-  python: circleci/python@0.2.1
-
 jobs:
-  build-and-test:
+  build:
+    docker:
+      - image: circleci/python:3.7.3-stretch
     executor: python/default
     steps:
       - checkout
@@ -28,4 +27,4 @@ jobs:
 workflows:
   main:
     jobs:
-      - build-and-test
+      - build
