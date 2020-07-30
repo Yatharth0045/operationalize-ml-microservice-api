@@ -1,0 +1,34 @@
+version: 2.1
+
+orbs:
+  python: circleci/python@0.2.1
+
+jobs:
+  build-and-test:
+    executor: python/default
+    steps:
+      - checkout
+      - restore_cache:
+        keys:
+        - v1-dependencies-{{ checksum "requirements.txt" }}
+        - v1-dependencies-
+      - run:
+          command: |
+          python3 -m venv venv
+          . venv/bin/activate
+          make install
+          wget -O /bin/hadolint https://github.com/hadolint/hadolint/releases/download/v1.16.3/hadolint-Linux-x86_64 && chmod +x /bin/hadolint
+      - save_cache:
+          key: v1-dependencies-{{ checksum "requirements.txt" }}
+          paths: 
+          - ./venv
+      - run:
+          name: Lint
+          command: |
+          . venv/bin/activate
+          make lint
+          
+workflows:
+  main:
+    jobs:
+      - build-and-test
