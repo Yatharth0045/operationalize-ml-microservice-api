@@ -2,6 +2,8 @@
 
 ## A Udacity Project for containerizing a ML Microservice written in python and running it over kubernetes
 
+[![CircleCI | Udacity ](https://circleci.com/gh/Yatharth0045/operationalize-ml-microservice-api.svg?style=svg)](https://github.com/Yatharth0045/operationalize-ml-microservice-api#operationalize-ml-microservice-api)
+
 ### Steps to be followed
 
 #### 1. Clone this repo
