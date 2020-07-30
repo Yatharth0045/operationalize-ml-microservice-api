@@ -57,3 +57,20 @@ git clone https://github.com/Yatharth0045/operationalize-ml-microservice-api.git
  ```
  hadolint Dockerfile
  ```
+
+#### Running the application
+
+##### 1. Run application over docker 
+
+ ```
+ ./run_docker.sh
+ ./make_prediction.sh
+ ```
+
+##### 2. Run application over minikube 
+
+ ```
+ minikube start
+ ./run_kubernetes.sh
+ ./make_prediction.sh
+ ```
