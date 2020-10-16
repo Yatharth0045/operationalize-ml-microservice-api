@@ -9,6 +9,7 @@ WORKDIR /project
 COPY app.py Makefile requirements.txt ./
 COPY ./model_data ./model_data
 
+ENV test-env
 ## Step 3:
 # Install packages from requirements.txt
 RUN make setup
